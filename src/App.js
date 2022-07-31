@@ -4,17 +4,20 @@ import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import Profile from './pages/Profile';
 import Register from './pages/Register';
+import CustomRoute from './routes/CustomRoute';
+import PrivateRoute from './routes/PrivateRoute';
+import PublicRoute from './routes/PublicRoute';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Switch>
-          <Route path='/login' component={Login} />
-          <Route path='/register' component={Register} />
-          <Route path='/dashboard' component={Dashboard} />
-          <Route path='/profile' component={Profile} />
-          <Route path='/' component={NotFound} />
+          <PublicRoute path='/login' component={Login} />
+          <PublicRoute path='/register' component={Register} />
+          <PrivateRoute path='/dashboard' component={Dashboard} />
+          <PrivateRoute path='/profile' component={Profile} />
+          <CustomRoute path='/' component={NotFound} />
         </Switch>
       </BrowserRouter>
     </div>
