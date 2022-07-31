@@ -1,7 +1,12 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 
 function Sidebar() {
+    const history = useHistory()
+    const handleLogoutClick = () => {
+        localStorage.removeItem('token')
+        history.replace('/login')
+    }
     return (
         <nav className="main-menu">
             <ul>
@@ -22,7 +27,7 @@ function Sidebar() {
 
             <ul className="logout">
                 <li>
-                    <a href="#" onClick={() => console.log('c')}>
+                    <a href="#" onClick={handleLogoutClick}>
                         <i className="fa fa-power-off"></i>
                         <span className="nav-text">Logout</span>
                     </a>
