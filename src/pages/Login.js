@@ -34,7 +34,6 @@ function Login() {
     }
     return (
         <div>
-            <Navbar />
             <h1>Login</h1>
             <form style={{ display: 'flex', flexDirection: 'column', margin: 20 }} onSubmit={handleSubmit}>
                 <input type="email" placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
